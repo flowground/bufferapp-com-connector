@@ -1,0 +1,357 @@
+{
+    "title": "Bufferapp",
+    "description": "Social media management for marketers and agencies",
+    "docsUrl": "https://buffer.com/developers/api",
+    "url": "https://api.apis.guru/v2/specs/bufferapp.com/1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.bufferapp.com/1/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "oauth_2_0": {
+                "label": "Body example for authorisation request:\n\nclient_id=...&\nredirect_uri=...&\nresponse_type=code\n\nBidy example for token request:\n\nPOST Data\nclient_id=...&\nclient_secret=...&\nredirect_uri=...&\ncode=...&\ngrant_type=authorization_code\n\nAll requests to the Buffer API must be made using HTTPS, with the access token provided in the HTTP Authorization header, request body or query string.\n",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://bufferapp.com/oauth2/authorize",
+            "token_uri": "https://api.bufferapp.com/1/oauth2/token.json"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_info_configuration_mediaTypeExtension_": {
+            "main": "./lib/actions/get_info_configuration_mediaTypeExtension_.js",
+            "title": "Returns an object with the current configuration that Buffer is using, including supported services, their icons and the varying limits of character and schedules.",
+            "description": "Returns an object with the current configuration that Buffer is using, including supported services, their icons and the varying limits of character and schedules.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_info_configuration_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_links_shares_mediaTypeExtension_": {
+            "main": "./lib/actions/get_links_shares_mediaTypeExtension_.js",
+            "title": "Returns an object with a the numbers of shares a link has had using Buffer.",
+            "description": "Returns an object with a the numbers of shares a link has had using Buffer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_links_shares_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_profiles__id__schedules_update_mediaTypeExtension_": {
+            "main": "./lib/actions/post_profiles__id__schedules_update_mediaTypeExtension_.js",
+            "title": "\"Set the posting schedules for the specified social media profile.\n",
+            "description": "\"Set the posting schedules for the specified social media profile.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_profiles__id__schedules_update_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_profiles__id__schedules_mediaTypeExtension_": {
+            "main": "./lib/actions/get_profiles__id__schedules_mediaTypeExtension_.js",
+            "title": "Returns details of the posting schedules associated with a social media profile.",
+            "description": "Returns details of the posting schedules associated with a social media profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_profiles__id__schedules_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_profiles__id__updates_pending_mediaTypeExtension_": {
+            "main": "./lib/actions/get_profiles__id__updates_pending_mediaTypeExtension_.js",
+            "title": "\"Returns an array of updates that are currently in the buffer for an individual social media profile.\n",
+            "description": "\"Returns an array of updates that are currently in the buffer for an individual social media profile.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_profiles__id__updates_pending_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_profiles__id__updates_reorder_mediaTypeExtension_": {
+            "main": "./lib/actions/post_profiles__id__updates_reorder_mediaTypeExtension_.js",
+            "title": "Edit the order at which statuses for the specified social media profile will be sent out of the buffer.\n",
+            "description": "Edit the order at which statuses for the specified social media profile will be sent out of the buffer.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_profiles__id__updates_reorder_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_profiles__id__updates_sent_mediaTypeExtension_": {
+            "main": "./lib/actions/get_profiles__id__updates_sent_mediaTypeExtension_.js",
+            "title": "Returns an array of updates that have been sent from the buffer for an individual social media profile.\n",
+            "description": "Returns an array of updates that have been sent from the buffer for an individual social media profile.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_profiles__id__updates_sent_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_profiles__id__updates_shuffle_mediaTypeExtension_": {
+            "main": "./lib/actions/post_profiles__id__updates_shuffle_mediaTypeExtension_.js",
+            "title": "Randomize the order at which statuses for the specified social media profile will be sent out of the buffer.\n",
+            "description": "Randomize the order at which statuses for the specified social media profile will be sent out of the buffer.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_profiles__id__updates_shuffle_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_profiles__id__mediaTypeExtension_": {
+            "main": "./lib/actions/get_profiles__id__mediaTypeExtension_.js",
+            "title": "Returns details of the single specified social media profile.",
+            "description": "Returns details of the single specified social media profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_profiles__id__mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_profiles_mediaTypeExtension_": {
+            "main": "./lib/actions/get_profiles_mediaTypeExtension_.js",
+            "title": "Returns an array of social media profiles connected to a users account.",
+            "description": "Returns an array of social media profiles connected to a users account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_profiles_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_updates_create_mediaTypeExtension_": {
+            "main": "./lib/actions/post_updates_create_mediaTypeExtension_.js",
+            "title": "Create one or more new status updates.\n",
+            "description": "Create one or more new status updates.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_updates_create_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_updates__id__destroy_mediaTypeExtension_": {
+            "main": "./lib/actions/post_updates__id__destroy_mediaTypeExtension_.js",
+            "title": "Permanently delete an existing status update.",
+            "description": "Permanently delete an existing status update.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_updates__id__destroy_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_updates__id__interactions_mediaTypeExtension_": {
+            "main": "./lib/actions/get_updates__id__interactions_mediaTypeExtension_.js",
+            "title": "Returns the detailed information on individual interactions with the social media update such as favorites, retweets and likes.\n",
+            "description": "Returns the detailed information on individual interactions with the social media update such as favorites, retweets and likes.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_updates__id__interactions_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_updates__id__move_to_top_mediaTypeExtension_": {
+            "main": "./lib/actions/post_updates__id__move_to_top_mediaTypeExtension_.js",
+            "title": "Move an existing status update to the top of the queue and recalculate times for all updates in the queue. Returns the update with its new posting time.",
+            "description": "Move an existing status update to the top of the queue and recalculate times for all updates in the queue. Returns the update with its new posting time.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_updates__id__move_to_top_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_updates__id__share_mediaTypeExtension_": {
+            "main": "./lib/actions/post_updates__id__share_mediaTypeExtension_.js",
+            "title": "Immediately shares a single pending update and recalculates times for updates remaining in the queue.",
+            "description": "Immediately shares a single pending update and recalculates times for updates remaining in the queue.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_updates__id__share_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_updates__id__update_mediaTypeExtension_": {
+            "main": "./lib/actions/post_updates__id__update_mediaTypeExtension_.js",
+            "title": "Edit an existing, individual status update.\n",
+            "description": "Edit an existing, individual status update.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_updates__id__update_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_updates__id__mediaTypeExtension_": {
+            "main": "./lib/actions/get_updates__id__mediaTypeExtension_.js",
+            "title": "Returns a single social media update.",
+            "description": "Returns a single social media update.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_updates__id__mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_mediaTypeExtension_": {
+            "main": "./lib/actions/get_user_mediaTypeExtension_.js",
+            "title": "Returns a single user.",
+            "description": "Returns a single user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_mediaTypeExtension_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

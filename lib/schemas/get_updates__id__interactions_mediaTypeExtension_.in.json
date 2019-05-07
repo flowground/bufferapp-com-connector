@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "mediaTypeExtension": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                ".json"
+            ]
+        },
+        "event": {
+            "required": true,
+            "type": "string"
+        },
+        "page": {
+            "type": "integer"
+        },
+        "count": {
+            "type": "integer"
+        }
+    }
+}

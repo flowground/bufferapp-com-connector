@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "mediaTypeExtension": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                ".json"
+            ]
+        },
+        "url": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "mediaTypeExtension": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                ".json"
+            ]
+        },
+        "page": {
+            "type": "integer"
+        },
+        "count": {
+            "type": "integer"
+        },
+        "since": {
+            "type": "string",
+            "format": "date"
+        },
+        "utc": {
+            "type": "boolean"
+        }
+    }
+}
